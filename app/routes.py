@@ -1,16 +1,24 @@
 from datetime import datetime
 from flask import render_template, flash, redirect, url_for, request
 from flask_login import login_user, logout_user, current_user, login_required
+from flask_mail import Message
 from werkzeug.urls import url_parse
-from app import app, db
-from app.forms import LoginForm, PostForm
+from app import app, db, mail
+from app.forms import LoginForm, PostForm, ContactForm
 from app.models import User, Post
 
 @app.route('/')
-@app.route('/index')
+@app.route('/index', methods=['GET', 'POST'])
 def index():
     posts = Post.query.all()
-    return render_template('index.html', posts=posts)
+    form = ContactForm()
+    if form.validate_on_submit():
+        msg = Message(subject=form.subject.data,sender=form.email.data,recipients=['lukalelovic@gmail.com'])
+        msg.body = render_template('email.txt', form=form)
+        msg.html = render_template('email.html', form=form)
+        mail.send(msg)
+        flash('Thanks for contacting me! I will make sure to respond ASAP!')
+    return render_template('index.html', posts=posts, form=form)
 
 @app.route('/dashboard', methods=['GET', 'POST'])
 @login_required
@@ -50,3 +58,4 @@ def logout():
 def post(id):
     post = Post.query.filter_by(id=id).first_or_404()
     return render_template('_post.html', post=post)
+    
