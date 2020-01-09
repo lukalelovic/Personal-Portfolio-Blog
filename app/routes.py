@@ -52,3 +52,11 @@ def logout():
 def post(id):
     post = Post.query.filter_by(id=id).first_or_404()
     return render_template('_post.html', post=post)
+
+
+@app.route('/delete-post/<int:id>')
+@login_required
+def delete_post(id):
+    p = Post.query.filter_by(id=id).delete()
+    db.session.commit()
+    return redirect(url_for('dashboard'))
