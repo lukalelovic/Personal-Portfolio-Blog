@@ -14,9 +14,9 @@ class PostForm(FlaskForm):
     post = TextAreaField('Enter Post Body:', validators=[DataRequired()])
     submit = SubmitField('Submit')
 
-class ContactForm(FlaskForm):
-    name = StringField('Your Name*', validators=[DataRequired()])
-    email = StringField('Your Email*',validators=[DataRequired()])
-    subject = StringField('Your Subject...')
-    message = TextAreaField('Your message...')
-    submit = SubmitField('Submit')
+#class ContactForm(FlaskForm):
+    #name = StringField('Your Name*', validators=[DataRequired()])
+    #email = StringField('Your Email*',validators=[DataRequired()])
+    #subject = StringField('Your Subject...')
+    #message = TextAreaField('Your message...')
+    #submit = SubmitField('Submit')

@@ -30,16 +30,27 @@
 	</div>
 	<!-- END: Preloader -->
 
-	<div>
+	<div style="margin: 20px;">
             <a href="{{ url_for('logout') }}">Logout</a>
         </div>
 
 	<!-- Blog Post Fields -->
-	<div class="row">
+	<div class="row" style="margin: 20px;">
        		<div class="col-md-4">
      			{{ wtf.quick_form(form) }}
         	</div>
     	</div>
+	<br>
+	<!-- Previous Posts -->
+	<div class="row" style="margin: 20px;">
+       		<div class="col-md-4">
+			<h3>Other Posts: </h3>
+			{% for post in posts %}
+			<a href="{{ url_for('post', id=post.id) }}" target="_blank">{{ post.title }}</a>
+			{% endfor %}
+        	</div>
+    	</div>
+
 
 	<!-- JAVASCRIPTS -->
 	<script src="{{ url_for('static', filename='js/vendor.js') }}"></script>
