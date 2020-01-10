@@ -4,7 +4,7 @@ from flask_login import login_user, logout_user, current_user, login_required
 #from flask_mail import Message
 from werkzeug.urls import url_parse
 from app import app, db
-from app.forms import LoginForm, PostForm
+from app.forms import LoginForm, PostForm, EditForm
 from app.models import User, Post
 
 @app.route('/')
@@ -60,3 +60,16 @@ def delete_post(id):
     p = Post.query.filter_by(id=id).delete()
     db.session.commit()
     return redirect(url_for('dashboard'))
+
+@app.route('/edit-post/<int:id>', methods=['GET', 'POST'])
+@login_required
+def edit_post(id):
+    p = Post.query.filter_by(id=id).first_or_404()
+    form = EditForm()
+    if form.validate_on_submit():
+        p.title = form.title.data
+        p.body = form.post.data 
+        db.session.commit()
+        return redirect(url_for('post', id=p.id))
+    return render_template('_edit-post.html', form=form, post=p)
+

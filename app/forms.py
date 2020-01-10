@@ -20,3 +20,8 @@ class PostForm(FlaskForm):
     #subject = StringField('Your Subject...')
     #message = TextAreaField('Your message...')
     #submit = SubmitField('Submit')
+
+class EditForm(FlaskForm):
+    title = StringField('Post Title:', validators=[DataRequired()])
+    post = TextAreaField('Post Body:', validators=[DataRequired()])
+    submit = SubmitField('Submit')
