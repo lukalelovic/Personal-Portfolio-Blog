@@ -1,7 +1,6 @@
 from datetime import datetime
 from flask import render_template, flash, redirect, url_for, request
 from flask_login import login_user, logout_user, current_user, login_required
-#from flask_mail import Message
 from werkzeug.urls import url_parse
 from app import app, db
 from app.forms import LoginForm, PostForm, EditForm
@@ -72,4 +71,3 @@ def edit_post(id):
         db.session.commit()
         return redirect(url_for('post', id=p.id))
     return render_template('_edit-post.html', form=form, post=p)
-

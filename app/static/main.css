@@ -1,0 +1,312 @@
+/* Main Elements */
+html { overflow: auto; }
+
+body {
+    margin: 0;
+    font-family: monospace;
+    color: white;
+    font-size: 14px;
+}
+
+h1 { font-size: 40px; }
+h2 { font-size: 36px; }
+h3 { font-size: 32px; font-family: Verdana; }
+h4 { font-size: 28px; letter-spacing: 2px; }
+h5 { font-size: 24px; font-family: courier; }
+h6 { font-size: 20px; font-family: Georgia; }
+
+p { font-size: 18px; }
+
+a {
+    text-decoration: none;
+    color: black;
+    
+    -webkit-transition: color 0.5s;
+    -moz-transition: color 0.5s;
+    transition: color 0.5s;
+}
+
+li {
+    line-height: 20px;
+    letter-spacing: 2px;
+    list-style-type: none;
+}
+
+li a {
+    display: block;
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+}
+
+span {
+    font-size: 16px;
+    word-spacing: 2px;
+    line-height: 30px;
+}
+
+label {
+    font-size: 18px;
+}
+
+a:hover { color: rgb(76, 76, 76); }
+
+.section-title {
+    text-align: center;
+}
+
+.bg-w {
+    background-color: white;
+}
+
+.bg-b {
+    background-color: rgb(35, 35, 35);
+}
+
+/* Input Fields */
+input[type=text], select {
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgb(54, 54, 54);
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 20%;
+    resize: vertical;
+}
+  
+input[type=submit] {
+    background-color: rgb(32, 72, 165);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 10%;
+}
+  
+input[type=submit]:hover {
+    background-color: rgb(36, 27, 133);
+}
+
+input::placeholder {
+    color: black;
+    font-family: monospace;
+}
+
+/* Navigation Bar */
+#navbar {
+    overflow: hidden;
+    background-color: white;
+    height: 60px;
+    position: fixed;
+    top: -75px;
+    width: 100%;
+    display: block;
+    transition: top 0.3s;
+}
+
+#navbar li {
+    float: left;
+    text-align: right;
+}
+
+#navbar-left-align {
+    margin-left: 30px;
+}
+
+#navbar-right-align {
+    margin-left: 80%;
+}
+
+/* Landing Page */
+.container {
+    text-align: center;
+    color: white;
+}
+
+.landing {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: content-box;
+    width: 100%;
+    height: 800px;
+}
+
+.landing-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Resume */
+#resume {
+    width: 100%;
+}
+
+.align-left {
+    width: 45%;
+    float: left;
+    margin-left: 25px;
+}
+
+.align-right {
+    width: 45%;
+    margin-right: 25px;
+    float: right;
+}
+
+.info-box {
+    box-sizing: border-box;
+    background-color: rgb(81, 80, 80);
+    border-radius: 3px;
+    border: 3px solid rgb(81, 80, 80);
+    padding: 10px;
+    margin-bottom: 50px;
+
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.info-box:hover {
+    box-shadow: 0px 3px 6px rgb(81, 81, 81);
+}
+
+/* Skills */
+.progress-back {
+    border-radius: 10px;
+    background: rgb(35, 35, 35);
+    margin: 10px;
+    width: 90%;
+    height: 10px;
+}
+
+.progress-bar {
+    border-radius: 10px;
+    background: rgb(41, 175, 223);
+    margin: 0px;
+    width: 0%;
+    height: 10px;
+    float: left;
+}
+
+/* Blog */
+#Blog {
+    color: rgb(35, 35, 35);
+    background-color: white;
+    margin-top: 6.5in;
+    height: 6in;
+    text-align: center;
+}
+
+.b-posts {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.b-box {
+    margin-bottom: 50px;
+    background: rgb(35, 35, 35);
+    height: auto;
+    max-width: 350px;
+    margin-left: 12px;
+    display: inline-block;
+}
+
+.b-box p {
+    text-align: left;
+    margin-left: 10px;
+}
+
+.b-box p, span {
+    color: white;
+}
+
+.b-box:hover{
+    background-color: black;
+}
+
+.b-image {
+    width: 350px;
+    height: 300px;
+}
+
+/* Contact */
+#Contact {
+    padding: 20px;
+    margin: 10px;
+}
+
+.contact-text {
+    text-align: center;
+}
+
+.contact-text a {
+    font-size: 20px;
+    color: white;
+    text-decoration: underline;
+    display: block;
+    margin-top: 10px;
+}
+
+.contact-phone {
+    width: 5%;
+    height: 5%;
+}
+
+.contact-email {
+    width: 6%;
+    height: 6%;
+    margin-top: 12.8px;
+}
+
+/* Blog Post */
+#Post {
+    padding: 20px;
+    width: auto;
+}
+
+#Post span {
+    color: black
+}
+
+#Post h3 {
+    margin: 0;
+}
+
+.b-post {
+    color: black;
+}
+
+.post-img {
+    float: right;
+    width: 500px;
+    height: 500px;
+    border: 6px solid rgb(61, 60, 60);
+}
+
+#Post .info-box {
+    min-height: 6in;
+    background-color: white;
+    border: white;
+}
+
+#Post .info-box span {
+    color: black;
+}
+
+#Post a {
+    color: blue;
+}

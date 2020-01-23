@@ -1,61 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+    <head>
 	<title>{{ post.title }}</title>
-	<meta name="description" content="Luka Lelovic's Blog" />
-	<meta name="keywords" content="blog, business card, creative, creative portfolio, cv theme, online resume, personal, portfolio, professional cv, responsive portfolio, resume, resume theme, vcard" />
-	<meta name="author" content="beingeorge" />
-	<meta name="theme-color" content="#2a2d35">
-
-	<!-- Vendor Css-->
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/vendor.css') }}" />	
-
-	<!-- JustinTemplate style Css -->
-	<link href="{{ url_for('static', filename='css/justin.css') }}" rel="stylesheet">
-
-	<!-- Custom style Css -->
-	<link href="{{ url_for('static', filename='custom.css') }}" rel="stylesheet">
-</head>
-
-<body data-spy="scroll" data-target=".navbar">
+        <meta name="viewport" content="width=device-with, initial-scale=1">
+        <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet" type="text/css">
+    </head>
+    <body class="bg-w">
 	{{ moment.include_jquery() }}
 	{{ moment.include_moment() }}
 
-	<!-- START: Preloader -->
-	<div id="preloader" class="preloader">
-		<div class="spinner-grow text-dark" role="status">
-			<span class="sr-only">Loading...</span>
-		</div>
-	</div>
-	<!-- END: Preloader -->
-
-    <div class="page-wrapper">
-
-		<!-- START: SERVICES -->
-		<section class="section section-services" id="services">
-			<div class="container">
-				<div class="section-head">
-					<h2>{{ post.title }}</h2>
-                		</div>
-				
-				<div class="resume-list b-box hover-state p-4 mt-4 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".3s">
-                   			 <div>
-                       			 	 <h5>{{ moment(post.timestamp).format('LL') }}</h5>
-                        			 <img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/uploads/{}.jpg'.format(post.id)) }}" alt="About Picture" width="500" height="500" style="float: right; margin: 15px;"/>	
-						 <p style="float: inline-start;">{{ post.body }}</p>		
-                    			</div>
-               			 </div>
-			</div>
-		</section>
-		<!-- END: SERVICES -->
-	</div>
-
-	<!-- JAVASCRIPTS -->
-	<script src="{{ url_for('static', filename='js/vendor.js') }}"></script>
-
-	<!-- Custom Js -->
-	<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
-</body>
+        <!--SECTION: BLOG POST-->
+        <section id="Post" >
+            <div class="b-post info-box">
+                <h3>{{ post.title }}</h3>
+                <span>{{ moment(post.timestamp).format('LL') }}</span>
+                <img class="post-img" src="{{ url_for('static', filename='images/uploads/{}.jpg'.format(post.id)) }}">
+                <p style="float:inline-start">{{ post.body|safe }}</p>
+            </div>
+        </section>
+    </body>
 </html>

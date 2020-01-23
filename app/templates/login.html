@@ -1,47 +1,14 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Luka Lelovic's Blog</title>
-	<meta name="description" content="Luka Lelovic's Blog" />
-	<meta name="keywords" content="blog, business card, creative, creative portfolio, cv theme, online resume, personal, portfolio, professional cv, responsive portfolio, resume, resume theme, vcard" />
-	<meta name="author" content="beingeorge" />
-	<meta name="theme-color" content="#2a2d35">
-
-	<!-- Vendor Css-->
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/vendor.css') }}" />	
-
-	<!-- JustinTemplate style Css -->
-	<link href="{{ url_for('static', filename='css/justin.css') }}" rel="stylesheet">
-
-	<!-- Custom style Css -->
-	<link href="{{ url_for('static', filename='custom.css') }}" rel="stylesheet">
-</head>
-
-<body>
-	<!-- START: Preloader -->
-	<div id="preloader" class="preloader">
-		<div class="spinner-grow text-dark" role="status">
-			<span class="sr-only">Loading...</span>
-		</div>
+    <head>
+        <meta name="viewport" content="width=device-with, initial-scale=1">
+    </head>
+    <body>
+	<div>
+	    <h1>Sign In</h1>
+            {{ wtf.quick_form(form) }}
 	</div>
-	<!-- END: Preloader -->
-
-	<div class="row" style="margin: 20px;">
-       		<div class="col-md-4">
-			<h1>Sign In</h1>
-           		{{ wtf.quick_form(form) }}
-        	</div>
-    	</div>
-	<br>
-
-	<!-- JAVASCRIPTS -->
-	<script src="{{ url_for('static', filename='js/vendor.js') }}"></script>
-		
-	<!-- Custom Js -->
-	<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
-</body>
+    </body>
 </html>

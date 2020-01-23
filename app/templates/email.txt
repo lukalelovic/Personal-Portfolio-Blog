@@ -1,2 +1,0 @@
-Message from: {{ form.email }}
-{{ form.message }}

@@ -1,339 +1,154 @@
 {% import 'bootstrap/wtf.html' as wtf %}
 
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Luka Lelovic's Blog</title>
-	<meta name="description" content="Luka Lelovic's Blog" />
-	<meta name="keywords" content="blog, business card, creative, creative portfolio, cv theme, online resume, personal, portfolio, professional cv, responsive portfolio, resume, resume theme, vcard" />
-	<meta name="author" content="beingeorge" />
-	<meta name="theme-color" content="#2a2d35">
-
-	<!-- Vendor Css-->
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/vendor.css') }}" />	
-
-	<!-- JustinTemplate style Css -->
-	<link href="{{ url_for('static', filename='css/justin.css') }}" rel="stylesheet">
-
-	<!-- Custom style Css -->
-	<link href="{{ url_for('static', filename='custom.css') }}" rel="stylesheet">
-</head>
-
-<body data-spy="scroll" data-target=".navbar">
+<html>
+    <head>
+	<title>Luka Lelovic</title>
+        <meta name="viewport" content="width=device-with, initial-scale=1">
+        <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet" type="text/css">
+    </head>
+    <body class="bg-b">
 	{{ moment.include_jquery() }}
 	{{ moment.include_moment() }}
 
-	<!-- START: Preloader -->
-	<div id="preloader" class="preloader">
-		<div class="spinner-grow text-dark" role="status">
-			<span class="sr-only">Loading...</span>
-		</div>
-	</div>
-	<!-- END: Preloader -->
+        <!--SECTION: NAVBAR-->
+        <div id="navbar">
+            <div id="navbar-left-align">
+                <ul><li><a href="#Home">Luka Lelovic</a></li></ul>
+            </div>
+            <div id="navbar-right-align">
+                <ul>
+                    <li><a href="#Resume">Resume</a></li>
+                    <li><a href="#Blog">Blog</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
 
-    <div class="page-wrapper">
-		<nav class="navbar navbar-expand-lg navbar-custom navbar-light fixed-top">
-			<div class="container">
+        <!--SECTION: HOME-->
+        <section id="Home">
+            <div class="container">
+                <img src="{{ url_for('static', filename='images/river.jpg') }}" class="landing" alt='river'> 
+                <div class="landing-title">
+                    <h1>Luka Lelovic</h1>
+                    <p>Aspiring computer science major + developer building software and web applications through carefully crafted code.</p>
+                </div>
+            </div>
+        </section>
 
-				<a class="navbar-brand  mr-auto " href="{{ url_for('index') }}">Luka
-					<!-- <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo"> -->
-				</a>
+        <!--SECTION: ABOUT-->
+        <section id="Resume">
+            <div class="section-title">
+                <h2>MY RESUME</h2>
+            </div>
+            <div class="align-left">
+                <p>My Experience</p>
+                <div class="info-box">
+                    <p>Internship | Apothewell | September 2019 - Present</p>
+                    <span>Deployed web applications using Python, Flask, HTML, AWS, NGINX, and SQLite3 (including this website).</span>
+                </div>
+            </div>
+            <div class="align-right">
+                <p>My Education</p>
+                <div class="info-box">
+                    <p>Little Rock Central High School | August 2016 - May 2020</p>
+                    <span>Completing/Completed a total of 9 Advanced Placement courses including AP Computer Science A, AP Physics, and AP Statistics</span>
+                </div>
+            </div>
+            <div class="align-left">
+                <p>Software Skills</p>
+                <div class="info-box left-info">
+                    <li>Emacs 
+                        <div class="progress-back back-left">
+                            <div class="progress-bar" style="width: 20%;"></div>
+                        </div>
+                    </li>
+                    <li>Photoshop 
+                        <div class="progress-back back-left">
+                            <div class="progress-bar" style="width: 36%;"></div>
+                        </div>
+                    </li>
+                    <li>Unity 3d
+                        <div class="progress-back back-left">
+                            <div class="progress-bar" style="width: 40%;"></div>
+                        </div>
+                    </li>
+                    <li>PuTTy & WinSCP
+                        <div class="progress-back back-left">
+                            <div class="progress-bar" style="width: 30%;"></div>
+                        </div>
+                    </li>
+                    <br>
+                </div>
+            </div>
+            <div class="align-left" style="margin-left: 6.65%;">
+                <p>Coding Skills</p>
+                <div class="info-box left-info">
+                    <li>Java
+                        <div class="progress-back back-left">
+                            <div class="progress-bar" style="width: 32%;"></div>
+                        </div>
+                    </li>
+                    <li>C#
+                        <div class="progress-back back-left">
+                            <div class="progress-bar" style="width: 30%;"></div>
+                        </div>
+                    </li>
+                    <li>Python
+                        <div class="progress-back back-left">
+                            <div class="progress-bar" style="width: 37%;"></div>
+                        </div>
+                    </li>
+                    <li>HTML
+                        <div class="progress-back back-left">
+                            <div class="progress-bar" style="width: 25%;"></div>
+                        </div>
+                    </li>
+                    <br>
+                </div>
+            </div>
+        </section>
 
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
+        <!--SECTION: BLOG-->
+        <section id="Blog">
+            <div class="section-title">
+                <br>
+                <h2>MY BLOG</h2>
+            </div>
+            <div class="b-posts">
+		{% for post in posts %}
+                <a href="{{ url_for('post', id=post.id) }}" class="b-box">
+                    <img src="{{ url_for('static', filename='images/uploads/{}.jpg'.format(post.id)) }}" class="b-image">
+                    <p>{{ post.title }}</p>
+                    <span>{{ moment(post.timestamp).format('LL') }}</span>
+                </a>
+		{% endfor %}
+            </div>
+        </section>
+        
+        <!--SECTION: CONTACT-->
+        <section id="Contact">
+            <div class="section-title">
+                <br>
+                <h2>Contact</h2>
+            </div>
+            <p style="margin-left: 25px;">Get In Touch</p>
+            <div class="align-left">
+                <div class="info-box contact-text">
+                    <img class="contact-phone" src="{{ url_for('static', filename='images/phone.png') }}">
+                    <a href="tel:5014102365">+501 410 2365</a>
+                    <p>Call Me</p>
+                </div>
+            </div>
+            <div class="align-right">
+                <div class="info-box contact-text">
+                    <img class="contact-email" src="{{ url_for('static', filename='images/mail.png') }}">
+                    <a href="mailto:lukalelovic@gmail.com">lukalelovic@gmail.com</a>
+                    <p>Email Me</p>
+                </div>
+            </div>
+        </section>
 
-				<div class="collapse navbar-collapse" id="navbarToggler">
-					<ul class="navbar-nav ml-auto">
-						<li><a class="nav-link active" href="#home">Home</a></li>
-						<li><a class="nav-link" href="#resume">Resume</a></li>
-						<li><a class="nav-link" href="#blog">Blog</a></li>
-						<li><a class="nav-link" href="#contact">Contact</a></li>
-						<ul>
-							<a href="https://www.github.com/lukalelovic">
-								<img src="{{ url_for('static', filename='images/github.png') }}" alt="Avatar" style="width:40px;height:40px;"> 
-							</a>
-						</ul>
-					</ul>
-				</div>
-			</div>
-		</nav>
-
-	<!-- START: HOME -->		
-    	<section class="section-home " id="home">
-    		<div class="overlay d-flex justify-content-center align-items-center">
-			<img src="{{ url_for('static', filename='images/river.jpg') }}"/>
-    			<div class="overlay-wrap section-head">
-	    			<span class="mb-2">Hello, I am</span>
-	 	   			<h1>Luka Lelovic</h1>
- 	   			</div>
- 	   	</div>
-    	</section>	
-    	<!-- END: HOME -->
-
-		<!-- START: ABOUT -->
-		<section class="section section-about" id="about">
-
-			<div class="section-about-wrap">
-
-				<div class="row justify-content-center align-items-center">
-					
-					<div class="col-md-7">
-						<div class="about-desc">
-							<div class="about-desc-content">
-								<h2>About Me</h2>
-								<p class="mt-4 font-weight-light">
-									Aspiring computer science major with a passion for building software and web applications through carefully crafted code.
-								</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-5 d-none d-md-block">
-						<img class="img-fluid img-thumbnail" src="{{ url_for('static', filename='images/profile.jpg') }}" alt="About Picture">
-					</div>
-
-				</div>
-
-			</div>
-
-		</section>
-		<!-- END: ABOUT -->
-
-		<!-- START: RESUME -->
-		<section class="section section-dark section-resume" id="resume">
-			<div class="container">
-				<div class="section-head">
-					<h2>My Resume</h2>
-				</div>
-
-				<div class="row mt-4">
-					<div class="col-sm-6 col-lg-6">
-						<h5 class="section-subHead mt-3"> My Experience</h5>
-						<div class="resume-list b-box hover-state p-4 mt-4 wow fadeInUp" data-wow-duration="1.5s">
-							<div>
-								<h5>Internship</h5>
-								<h6 class="badge badge-dark d-inline-block my-3">September 2019 - Present | Apothewell</h6>
-								<p>Deployed web applications using Python, Flask, HTML, AWS, NGINX, and SQLite3 (including this website!)
-</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-6 col-lg-6">
-						<h5 class="section-subHead mt-3"> My Education</h5>
-						<div class="resume-list b-box hover-state p-4 mt-4 wow fadeInUp" data-wow-duration="1.5s">
-							<div>
-								<h5>Little Rock Central High School</h5>
-								<h6 class="badge badge-dark d-inline-block my-3">August 2016 - May 2020</h6>
-								<p>Completing/Completed a total of 9 Advanced Placement courses including AP Computer Science A, AP Physics, and AP Statistics</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="row mt-4">
-					<div class="col-sm-6 col-lg-6">
-						<h5 class="section-subHead mt-3"> Software Skills</h5>
-						<div class="resume-panel b-box hover-state p-4 mt-3">
-
-							<div class="mb-4 pb-2 wow fadeInUp"  data-wow-duration="1.5s">
-								<h6>Emacs </h6>
-								<div class="progress mt-2" style="height: 7px;">
-									<div class="progress-bar" role="progressbar" style="width: 16%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-								</div>
-							</div>
-
-							<div class="mb-4 pb-2 wow fadeInUp"  data-wow-duration="1.5s" data-wow-delay=".2s">
-								<h6>Photoshop</h6>
-								<div class="progress mt-2" style="height: 7px;">
-									<div class="progress-bar" role="progressbar" style="width: 36%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-								</div>
-							</div>
-
-							<div class="mb-4 pb-2 wow fadeInUp"  data-wow-duration="1.5s" data-wow-delay=".3s">
-								<h6>Unity 3d</h6>
-								<div class="progress mt-2" style="height: 7px;">
-									<div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-								</div>
-							</div>
-
-							<div class="mb-0 wow fadeInUp"  data-wow-duration="1.5s" data-wow-delay=".4s">
-								<h6>Putty & WinSCP</h6>
-								<div class="progress mt-2" style="height: 7px;">
-									<div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-								</div>
-							</div>
-
-						</div>
-					</div>
-					<div class="col-sm-6 col-lg-6">
-						<h5 class="section-subHead mt-3"> Coding Skills</h5>
-						<div class="resume-list b-box hover-state p-4 mt-3">
-							<div class="mb-4 pb-2 wow fadeInUp" data-wow-duration="1.5s">
-								<h6>Java</h6>
-								<div class="progress mt-2" style="height: 7px;">
-									<div class="progress-bar" role="progressbar" style="width: 30%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-								</div>
-							</div>
-
-							<div class="mb-4 pb-2 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".2s">
-								<h6>C#</h6>
-								<div class="progress mt-2" style="height: 7px;">
-									<div class="progress-bar" role="progressbar" style="width: 35%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-								</div>
-							</div>
-
-							<div class="mb-4 pb-2 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".3s">
-								<h6>Python</h6>
-								<div class="progress mt-2" style="height: 7px;">
-									<div class="progress-bar" role="progressbar" style="width: 26%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-								</div>
-							</div>
-
-							<div class="mb-0 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".4s">
-								<h6>HTML</h6>
-								<div class="progress mt-2" style="height: 7px;">
-									<div class="progress-bar" role="progressbar" style="width: 18%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-						
-			</div>
-		</section>
-		<!-- END: RESUME -->
-
-		<!-- START: TESTIMONY -->
-		<section class="section section-dark section-testimony" id="testimony">
-			<div class="container">
-				<div class="section-head text-center">
-					<h2>Testimonials</h2>
-				</div>
-				<div class="row mt-4">
-					<div class="col-lg-12">
-						<div class="swiper-container swiper-testimony wow fadeInUp"  data-wow-duration="1.5s">
-							<div class="swiper-wrapper">
-								<div class="swiper-slide single-testimonials ">
-									<div class="single-testimonials-in text-center p-4 b-box mx-auto">
-										<img src="{{ url_for('static', filename='images/sam.jpg') }}" alt="" class="mx-auto b-box">
-										<p class="pt-2 mt-4 text-center">"Luka is a fast-learning, creative, and curious developer with substantial capability and tremendous promise. I wholeheartedly recommend him for any situation in which these attributes are valuable."</p>
-										<span class="font-weight-bold mt-3 d-block">- Sam Fisher, Data Scientist</span>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-pagination"></div>
-						</div>
-
-						<div class="testimony-nav">
-							<a href="#" class="swiper-button-next"></a>
-							<a href="#" class="swiper-button-prev"></a>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- END: TESTIMONY -->
-
-		<!-- START: BLOG -->
-		<section class="section section-light section-blog" id="blog">
-			<div class="container">   
-				<div class="section-head">
-					<h2>My Blog</h2>
-				</div>                 
-				<div class="mt-5">
-					<div class="swiper-container swiper-blog">
-						<div class="swiper-wrapper">
-							{% for post in posts %}
-							<a href="{{ url_for('post', id=post.id) }}" class="swiper-slide blog-list b-box hover-state d-block mb-4" target="_blank">
-								{% block create_post %}{% endblock %}
-								<div class="blog-list--img wow fadeIn" data-wow-duration="1.5s">
-									<img src="{{ url_for('static', filename='images/uploads/{}.jpg'.format(post.id)) }}" alt="Blog Image" class="img-fluid">
-									<div class="blog-list--details d-flex justify-content-center align-items-center">
-										<div class="blog-list--details-in">
-											<p class="blog-by text-white">{{ post.title }}</p>
-											<span class="blog-duration text-white">{{ moment(post.timestamp).format('LL') }}</span>
-										</div>
-									</div>
-								</div>
-								<div class="blog-list--desc p-3">
-									<p>{{ post.title }}</p>
-									<span class="d-block text-center mt-3 font-weight-bold blog-cat">{{ moment(post.timestamp).format('LL') }}</span>
-								</div>
-							</a>
-							{% endfor %}
-						</div>
-						<div class="swiper-progressbar"></div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- END: BLOG -->
-
-		<!-- START: CONTACT -->
-		<section class="section section-dark section-contact" id="contact">
-			<div class="container">
-				<div class="section-head">
-					<h2>Contact </h2>
-				</div>
-			</div>
-
-			<div class="contact-Otherdetails">
-				<div class="container">
-					<div class="contact-details">
-						<h5 class="section-subHead pt-5 mb-4"> Get in Touch</h5>
-						<div class="row">
-							<div class="col-sm-6 col-lg-6">
-								<div class="contact-details--panel p-4 b-box text-center hover-state wow fadeInUp" data-wow-duration="1.5s">
-									<div class="mb-4" style="margin: 15px;">
-										<i class="fas fa-mobile-alt  "></i>
-									</div>
-									<div class="mt-2" style="margin: 15px;">
-										<a href="tel:5014102365" class="">+501 410 2365</a>
-										<p class="mt-1 font-weight-bold ">Call Me</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-6 col-lg-6">
-								<div class="contact-details--panel p-4 b-box text-center hover-state wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".2s">
-									<div class="mb-4" style="margin: 15px;">
-										<i class="fas fa-envelope  "></i>
-									</div>
-									<div class="mt-2" style="margin: 15px;">
-										<a href="mailto:lukalelovic@gmail.com">lukalelovic@gmail.com</a>
-										<p class="mt-1 font-weight-bold ">Email Me</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="contact-form mt-5">	
-							<div class="row">
-								<div class="col-lg-12">
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- END: CONTACT -->
-	</div>
-
-
-	<!-- JAVASCRIPTS -->
-	<script src="{{ url_for('static', filename='js/vendor.js') }}"></script>
-
-		
-	<!-- Custom Js -->
-	<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
-</body>
+        <script src="{{ url_for('static', filename='main.js') }}"></script>
+    </body>
 </html>
