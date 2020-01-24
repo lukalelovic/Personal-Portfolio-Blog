@@ -15,7 +15,9 @@ h4 { font-size: 28px; letter-spacing: 2px; }
 h5 { font-size: 24px; font-family: courier; }
 h6 { font-size: 20px; font-family: Georgia; }
 
-p { font-size: 18px; }
+p { 
+    font-size: 16px;
+}
 
 a {
     text-decoration: none;
@@ -70,41 +72,9 @@ a:hover { color: rgb(76, 76, 76); }
     background-color: rgb(35, 35, 35);
 }
 
-/* Input Fields */
-input[type=text], select {
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid rgb(54, 54, 54);
-    border-radius: 4px;
-    box-sizing: border-box;
-    width: 20%;
-    resize: vertical;
-}
-  
-input[type=submit] {
-    background-color: rgb(32, 72, 165);
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 10%;
-}
-  
-input[type=submit]:hover {
-    background-color: rgb(36, 27, 133);
-}
-
-input::placeholder {
-    color: black;
-    font-family: monospace;
-}
-
 /* Navigation Bar */
 #navbar {
-    overflow: hidden;
+    overflow: auto;
     background-color: white;
     height: 60px;
     position: fixed;
@@ -116,7 +86,6 @@ input::placeholder {
 
 #navbar li {
     float: left;
-    text-align: right;
 }
 
 #navbar-left-align {
@@ -124,7 +93,13 @@ input::placeholder {
 }
 
 #navbar-right-align {
-    margin-left: 80%;
+    margin-left: 70%;
+}
+
+.nav-img {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
 }
 
 /* Landing Page */
@@ -309,4 +284,61 @@ input::placeholder {
 
 #Post a {
     color: blue;
+}
+
+/* Mobile Support */
+@media only screen and (max-width: 1000px) {
+    h1, h2, h3, h4, h5, h6 { font-size: 4vw; }
+
+    p { font-size: 2.5vw; }
+
+    span, li, a, label {
+        font-size: 2vw;
+        margin: 0;
+    }
+
+    span { line-height: 0px; }
+
+    .info-box { border: 0; }
+
+    #Blog { height: 65vw; margin-top: 100vw; }
+
+    .b-box { margin: 0; }
+
+    .b-image {
+        width: 40vw;
+        height: 35vw;
+    }
+
+    .align-left {
+        width: 40%;
+        float: left;
+    }
+    
+    .align-right {
+        width: 40%;
+        float: right;
+    }
+
+    .progress-back { margin: 0; }
+
+    #Contact {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    .contact-text a {
+        font-size: 2.5vw;
+        margin-top: 10px;
+    }
+    
+    .contact-phone {
+        width: 12px;
+        height: 12px;
+    }
+    
+    .contact-email {
+        width: 10px;
+        height: 10px;
+    }
 }
