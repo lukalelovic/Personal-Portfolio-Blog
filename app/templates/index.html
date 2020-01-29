@@ -15,6 +15,7 @@
         <div id="navbar">
             <div id="navbar-left-align">
                 <ul><li><a href="#Home">Luka Lelovic</a></li></ul>
+		<button onclick="dropDown()" class="nav-btn">X</button>
             </div>
             <div id="navbar-right-align">
                 <ul>
@@ -31,7 +32,7 @@
         <!--SECTION: HOME-->
         <section id="Home">
             <div class="container">
-                <img src="{{ url_for('static', filename='images/river.jpg') }}" class="landing" alt='river'> 
+                <img src="{{ url_for('static', filename='images/river.jpg') }}" class="landing-img" alt='river'> 
                 <div class="landing-title">
                     <h1>Luka Lelovic</h1>
                     <p>Aspiring computer science major + developer building software and web applications through carefully crafted code.</p>
@@ -84,7 +85,7 @@
                     <br>
                 </div>
             </div>
-            <div class="align-left" style="margin-left: 6.65%;">
+            <div class="align-right">
                 <p>Coding Skills</p>
                 <div class="info-box left-info">
                     <li>Java

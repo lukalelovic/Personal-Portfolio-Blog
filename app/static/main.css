@@ -6,6 +6,7 @@ body {
     font-family: monospace;
     color: white;
     font-size: 14px;
+    overflow: hidden;
 }
 
 h1 { font-size: 40px; }
@@ -15,9 +16,7 @@ h4 { font-size: 28px; letter-spacing: 2px; }
 h5 { font-size: 24px; font-family: courier; }
 h6 { font-size: 20px; font-family: Georgia; }
 
-p { 
-    font-size: 16px;
-}
+p { font-size: 16px; }
 
 a {
     text-decoration: none;
@@ -54,23 +53,25 @@ span {
     line-height: 30px;
 }
 
-label {
-    font-size: 18px;
+label { font-size: 18px; }
+
+button {
+    background-color: rgb(105, 105, 105);
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 a:hover { color: rgb(76, 76, 76); }
 
-.section-title {
-    text-align: center;
-}
+.section-title { text-align: center; }
 
-.bg-w {
-    background-color: white;
-}
+.bg-w { background-color: white; }
 
-.bg-b {
-    background-color: rgb(35, 35, 35);
-}
+.bg-b { background-color: rgb(35, 35, 35); }
 
 /* Navigation Bar */
 #navbar {
@@ -84,22 +85,30 @@ a:hover { color: rgb(76, 76, 76); }
     transition: top 0.3s;
 }
 
-#navbar li {
-    float: left;
-}
+#navbar li { float: left; }
 
-#navbar-left-align {
-    margin-left: 30px;
-}
+#navbar-left-align { margin-left: 30px; }
 
-#navbar-right-align {
-    margin-left: 70%;
-}
+#navbar-right-align { margin-left: 70%; }
 
 .nav-img {
     width: 50px;
     height: 50px;
     margin: 5px;
+}
+  
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.nav-btn {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+    float: right;
+    margin-top: 5px;
+    visibility: hidden;
 }
 
 /* Landing Page */
@@ -108,13 +117,12 @@ a:hover { color: rgb(76, 76, 76); }
     color: white;
 }
 
-.landing {
-    background-position: center;
-    background-repeat: no-repeat;
+.landing-img {
+    background-attachment: fixed;
+    background-position: top right;
     background-size: cover;
-    background-clip: content-box;
-    width: 100%;
     height: 800px;
+    width: 100%;
 }
 
 .landing-title {
@@ -125,9 +133,7 @@ a:hover { color: rgb(76, 76, 76); }
 }
 
 /* Resume */
-#resume {
-    width: 100%;
-}
+#resume { width: 100%; }
 
 .align-left {
     width: 45%;
@@ -154,9 +160,7 @@ a:hover { color: rgb(76, 76, 76); }
     transition: all 0.5s;
 }
 
-.info-box:hover {
-    box-shadow: 0px 3px 6px rgb(81, 81, 81);
-}
+.info-box:hover { box-shadow: 0px 3px 6px rgb(81, 81, 81); }
 
 /* Skills */
 .progress-back {
@@ -205,13 +209,9 @@ a:hover { color: rgb(76, 76, 76); }
     margin-left: 10px;
 }
 
-.b-box p, span {
-    color: white;
-}
+.b-box p, span { color: white; }
 
-.b-box:hover{
-    background-color: black;
-}
+.b-box:hover{ background-color: black; }
 
 .b-image {
     width: 350px;
@@ -224,9 +224,7 @@ a:hover { color: rgb(76, 76, 76); }
     margin: 10px;
 }
 
-.contact-text {
-    text-align: center;
-}
+.contact-text { text-align: center; }
 
 .contact-text a {
     font-size: 20px;
@@ -253,17 +251,11 @@ a:hover { color: rgb(76, 76, 76); }
     width: auto;
 }
 
-#Post span {
-    color: black
-}
+#Post span { color: black }
 
-#Post h3 {
-    margin: 0;
-}
+#Post h3 { margin: 0; }
 
-.b-post {
-    color: black;
-}
+.b-post { color: black; }
 
 .post-img {
     float: right;
@@ -278,13 +270,9 @@ a:hover { color: rgb(76, 76, 76); }
     border: white;
 }
 
-#Post .info-box span {
-    color: black;
-}
+#Post .info-box span { color: black; }
 
-#Post a {
-    color: blue;
-}
+#Post a { color: blue; }
 
 /* Mobile Support */
 @media only screen and (max-width: 1000px) {
@@ -299,11 +287,25 @@ a:hover { color: rgb(76, 76, 76); }
 
     span { line-height: 0px; }
 
+    #navbar { margin: 0; }
+
+    #navbar-left-align { margin: 0; }
+    
+    #navbar-right-align { margin-top: 10vw; margin-left: 0; display: inline-block; visibility: hidden; }
+
+    .nav-btn { visibility: visible; float: right; margin-right: 5px;}
+
+    #Resume .info-box {
+        min-height: 38vw;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
     .info-box { border: 0; }
 
-    #Blog { height: 65vw; margin-top: 100vw; }
+    #Blog { height: 65vw; margin-top: 110vw; }
 
-    .b-box { margin: 0; }
+    .b-box { margin: 1vw; }
 
     .b-image {
         width: 40vw;
@@ -322,23 +324,25 @@ a:hover { color: rgb(76, 76, 76); }
 
     .progress-back { margin: 0; }
 
-    #Contact {
-        padding: 20px;
-        margin: 10px;
-    }
+    #Contact { margin: 10px; }
     
+    #Contact .info-box { min-height: 115px; min-width: 200px; }
+
+    #Contact .align-left { margin-left: 0; }
+
     .contact-text a {
-        font-size: 2.5vw;
+        font-size: 3vw;
         margin-top: 10px;
     }
     
     .contact-phone {
-        width: 12px;
-        height: 12px;
+        width: 4vw;
+        height: 5vw;
     }
     
     .contact-email {
-        width: 10px;
-        height: 10px;
+        width: 4.5vw;
+        height: 4vw;
+        margin: 2px;
     }
 }
