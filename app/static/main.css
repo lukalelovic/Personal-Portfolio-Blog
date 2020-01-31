@@ -109,6 +109,8 @@ a:hover { color: rgb(76, 76, 76); }
     float: right;
     margin-top: 5px;
     visibility: hidden;
+    border-radius: 4px;
+    font-size: 26px;
 }
 
 /* Landing Page */
@@ -268,7 +270,10 @@ a:hover { color: rgb(76, 76, 76); }
     min-height: 6in;
     background-color: white;
     border: white;
+    box-shadow: 0px 3px 6px rgb(142, 141, 141);
 }
+
+#Post .info-box:hover { box-shadow: 0px 3px 6px rgb(32, 32, 32); }
 
 #Post .info-box span { color: black; }
 
@@ -296,14 +301,14 @@ a:hover { color: rgb(76, 76, 76); }
     .nav-btn { visibility: visible; float: right; margin-right: 5px;}
 
     #Resume .info-box {
-        min-height: 38vw;
-        margin-bottom: 0;
+        min-height: 40vw;
+        margin-bottom: 25px;
         margin-top: 0;
     }
 
     .info-box { border: 0; }
 
-    #Blog { height: 65vw; margin-top: 110vw; }
+    #Blog { height: 65vw; margin-top: 125vw; }
 
     .b-box { margin: 1vw; }
 
@@ -326,12 +331,13 @@ a:hover { color: rgb(76, 76, 76); }
 
     #Contact { margin: 10px; }
     
-    #Contact .info-box { min-height: 115px; min-width: 200px; }
+    #Contact .info-box { min-height: 105px; min-width: 135px; margin-bottom: 15vw; }
 
     #Contact .align-left { margin-left: 0; }
+    #Contact .align-right { margin-right: 0; }
 
     .contact-text a {
-        font-size: 3vw;
+        font-size: 2.3vw;
         margin-top: 10px;
     }
     
@@ -344,5 +350,13 @@ a:hover { color: rgb(76, 76, 76); }
         width: 4.5vw;
         height: 4vw;
         margin: 2px;
+    }
+
+    .post-img {
+        float: right;
+        margin-top: 3vw;
+        width: 50vw;
+        height: 50vw;
+        border: 3px solid rgb(61, 60, 60);
     }
 }

@@ -15,7 +15,7 @@
         <div id="navbar">
             <div id="navbar-left-align">
                 <ul><li><a href="#Home">Luka Lelovic</a></li></ul>
-		<button onclick="dropDown()" class="nav-btn">X</button>
+		<button onclick="dropDown()" class="nav-btn">=</button>
             </div>
             <div id="navbar-right-align">
                 <ul>
@@ -136,8 +136,8 @@
                 <br>
                 <h2>Contact</h2>
             </div>
-            <p style="margin-left: 25px;">Get In Touch</p>
             <div class="align-left">
+		<p>Get In Touch</p>
                 <div class="info-box contact-text">
                     <img class="contact-phone" src="{{ url_for('static', filename='images/phone.png') }}">
                     <a href="tel:5014102365">+501 410 2365</a>
@@ -145,6 +145,7 @@
                 </div>
             </div>
             <div class="align-right">
+		<p style="visibility: hidden;">...</p>
                 <div class="info-box contact-text">
                     <img class="contact-email" src="{{ url_for('static', filename='images/mail.png') }}">
                     <a href="mailto:lukalelovic@gmail.com">lukalelovic@gmail.com</a>
