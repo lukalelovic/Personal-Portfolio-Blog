@@ -89,7 +89,7 @@ a:hover { color: rgb(76, 76, 76); }
 
 #navbar-left-align { margin-left: 30px; }
 
-#navbar-right-align { margin-left: 70%; }
+#navbar-right-align { margin-left: 75%; }
 
 .nav-img {
     width: 50px;
@@ -280,7 +280,7 @@ a:hover { color: rgb(76, 76, 76); }
 #Post a { color: blue; }
 
 /* Mobile Support */
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1200px) {
     h1, h2, h3, h4, h5, h6 { font-size: 4vw; }
 
     p { font-size: 2.5vw; }
@@ -331,7 +331,7 @@ a:hover { color: rgb(76, 76, 76); }
 
     #Contact { margin: 10px; }
     
-    #Contact .info-box { min-height: 105px; min-width: 135px; margin-bottom: 15vw; }
+    #Contact .info-box { min-height: 105px; min-width: 135px; margin-bottom: 25vw; }
 
     #Contact .align-left { margin-left: 0; }
     #Contact .align-right { margin-right: 0; }
