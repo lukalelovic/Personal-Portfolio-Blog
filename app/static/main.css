@@ -74,6 +74,13 @@ a:hover { color: rgb(76, 76, 76); }
 .bg-b { background-color: rgb(35, 35, 35); }
 
 /* Navigation Bar */
+:target:before {
+    content: "";
+    display: block;
+    height: 60px;
+    margin: -60px 0 0;
+}
+
 #navbar {
     overflow: auto;
     background-color: white;
@@ -186,8 +193,8 @@ a:hover { color: rgb(76, 76, 76); }
 #Blog {
     color: rgb(35, 35, 35);
     background-color: white;
-    margin-top: 6.5in;
-    height: 6in;
+    margin-top: 7in;
+    height: 7in;
     text-align: center;
 }
 
@@ -308,7 +315,7 @@ a:hover { color: rgb(76, 76, 76); }
 
     .info-box { border: 0; }
 
-    #Blog { height: 65vw; margin-top: 125vw; }
+    #Blog { height: 90vw; margin-top: 125vw; }
 
     .b-box { margin: 1vw; }
 

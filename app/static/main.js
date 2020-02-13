@@ -5,10 +5,11 @@ var clicked = false;
 function scrollFunction() {
     let width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20)
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         nav.style.top = "0";
-    else 
+    } else {
         nav.style.top = "-75px";
+    }
 
     if (width > 1000) {
         nav.style.height = "60px";
@@ -16,6 +17,13 @@ function scrollFunction() {
         clicked = false;
     } else if (clicked == false) {
         document.getElementById("navbar-right-align").style.visibility = "hidden";
+    }
+
+    if (width < 1000) {
+        document.getElementById("navbar-right-align").style.visibility = "hidden";
+        nav.style.height = "60px";
+        if (clicked == true) 
+            clicked = false;
     }
 }
 
@@ -27,16 +35,5 @@ function dropDown() {
     } else {
         nav.style.height = "60px";
         document.getElementById("navbar-right-align").style.visibility = "hidden";
-    }
-}
-
-function navScroll(scrollX, scrollY) {
-    let width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    window.scrollTo(scrollX, scrollY);
-    if (width < 1000) {
-        document.getElementById("navbar-right-align").style.visibility = "hidden";
-        nav.style.height = "60px";
-        if (clicked == true) 
-            clicked = false;
     }
 }
