@@ -113,11 +113,11 @@ a:hover { color: rgb(76, 76, 76); }
     background-color: white;
     color: black;
     border: 2px solid #555555;
-    float: right;
     margin-top: 5px;
     visibility: hidden;
     border-radius: 4px;
     font-size: 26px;
+    float: right;
 }
 
 /* Landing Page */
@@ -280,6 +280,8 @@ a:hover { color: rgb(76, 76, 76); }
     box-shadow: 0px 3px 6px rgb(142, 141, 141);
 }
 
+#Post p { margin: 10px; }
+
 #Post .info-box:hover { box-shadow: 0px 3px 6px rgb(32, 32, 32); }
 
 #Post .info-box span { color: black; }
@@ -306,6 +308,8 @@ a:hover { color: rgb(76, 76, 76); }
     #navbar-right-align { margin-top: 10vw; margin-left: 0; display: inline-block; visibility: hidden; }
 
     .nav-btn { visibility: visible; float: right; margin-right: 5px;}
+
+    .landing-img { object-fit: cover; }
 
     #Resume .info-box {
         min-height: 40vw;
@@ -361,9 +365,9 @@ a:hover { color: rgb(76, 76, 76); }
 
     .post-img {
         float: right;
-        margin-top: 3vw;
-        width: 50vw;
-        height: 50vw;
+        width: 45vw;
+        height: 45vw;
         border: 3px solid rgb(61, 60, 60);
+        margin: 5px;
     }
 }
