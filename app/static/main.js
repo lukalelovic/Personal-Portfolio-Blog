@@ -11,7 +11,7 @@ function scrollFunction() {
         nav.style.top = "-75px";
     }
 
-    if (width > 1000) {
+    if (width > 1200) {
         nav.style.height = "60px";
         document.getElementById("navbar-right-align").style.visibility = "visible";
         clicked = false;
@@ -19,7 +19,7 @@ function scrollFunction() {
         document.getElementById("navbar-right-align").style.visibility = "hidden";
     }
 
-    if (width < 1000) {
+    if (width < 1200) {
         document.getElementById("navbar-right-align").style.visibility = "hidden";
         nav.style.height = "60px";
         if (clicked == true) 

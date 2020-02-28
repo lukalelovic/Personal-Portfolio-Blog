@@ -288,6 +288,10 @@ a:hover { color: rgb(76, 76, 76); }
 
 #Post a { color: blue; }
 
+@media only screen and (max-width: 1500px) { 
+    #navbar-right-align { margin-left: 65vw; }
+}
+
 /* Mobile Support */
 @media only screen and (max-width: 1200px) {
     h1, h2, h3, h4, h5, h6 { font-size: 4vw; }
