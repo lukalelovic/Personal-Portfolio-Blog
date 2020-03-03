@@ -211,6 +211,7 @@ a:hover { color: rgb(76, 76, 76); }
     max-width: 350px;
     margin-left: 12px;
     display: inline-block;
+    overflow: hidden;
 }
 
 .b-box p {
@@ -225,6 +226,7 @@ a:hover { color: rgb(76, 76, 76); }
 .b-image {
     width: 350px;
     height: 300px;
+    overflow: hidden;
 }
 
 /* Contact */
