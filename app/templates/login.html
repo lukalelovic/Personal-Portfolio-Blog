@@ -3,10 +3,13 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Login</title>
         <meta name="viewport" content="width=device-with, initial-scale=1">
+        <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet" type="text/css">
+
     </head>
     <body>
-	<div>
+	<div class="login">
 	    <h1>Sign In</h1>
             {{ wtf.quick_form(form) }}
 	</div>

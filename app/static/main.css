@@ -53,7 +53,7 @@ span {
     line-height: 30px;
 }
 
-label { font-size: 18px; }
+label { font-size: 18px; color: black; }
 
 button {
     background-color: rgb(105, 105, 105);
@@ -63,6 +63,14 @@ button {
     height: 50px;
     font-size: 16px;
     cursor: pointer;
+}
+
+input, button {
+    border: 2px solid black;
+    border-radius: 4px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: fit-content;
+    margin: 10px;
 }
 
 a:hover { color: rgb(76, 76, 76); }
@@ -211,7 +219,6 @@ a:hover { color: rgb(76, 76, 76); }
     max-width: 350px;
     margin-left: 12px;
     display: inline-block;
-    overflow: hidden;
 }
 
 .b-box p {
@@ -226,7 +233,7 @@ a:hover { color: rgb(76, 76, 76); }
 .b-image {
     width: 350px;
     height: 300px;
-    overflow: hidden;
+    object-fit: cover;
 }
 
 /* Contact */
@@ -289,6 +296,12 @@ a:hover { color: rgb(76, 76, 76); }
 #Post .info-box span { color: black; }
 
 #Post a { color: blue; }
+
+/* Login */
+.login {
+    color: black;
+    margin-left: 25px;
+}
 
 @media only screen and (max-width: 1500px) { 
     #navbar-right-align { margin-left: 65vw; }
