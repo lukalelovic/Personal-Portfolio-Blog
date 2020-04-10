@@ -2,7 +2,7 @@ from datetime import datetime
 from flask import render_template, flash, redirect, url_for, request
 from flask_login import login_user, logout_user, current_user, login_required
 from werkzeug.urls import url_parse
-from app import app, db
+from app import app, db, limiter
 from app.forms import LoginForm, PostForm, EditForm
 from app.models import User, Post
 
@@ -26,6 +26,7 @@ def dashboard():
     return render_template('dashboard.html',form=form,posts=posts)
 
 @app.route('/login', methods=['GET', 'POST'])
+@limiter.limit("10/hour")
 def login():
     if current_user.is_authenticated:
         return redirect(url_for('dashboard'))
