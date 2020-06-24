@@ -13,9 +13,9 @@
         <section id="Post" >
             <div class="b-post info-box">
                 <h3>{{ post.title }}</h3>
-                <span>{{ moment(post.timestamp).format('LL') }}</span>
+                <span style="display: block;">{{ moment(post.timestamp).format('LL') }}</span>
                 <img class="post-img" src="{{ url_for('static', filename='images/uploads/{}.jpg'.format(post.id)) }}">
-                <p style="float:inline-start">{{ post.body|safe }}</p>
+                <p style="display: inline;">{{ post.body|safe }}</p>
             </div>
         </section>
     </body>

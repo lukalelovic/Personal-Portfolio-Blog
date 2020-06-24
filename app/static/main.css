@@ -283,13 +283,13 @@ a:hover { color: rgb(76, 76, 76); }
 }
 
 #Post .info-box {
-    min-height: 6in;
+    min-height: 6.5in;
     background-color: white;
     border: white;
     box-shadow: 0px 3px 6px rgb(142, 141, 141);
 }
 
-#Post p { margin: 10px; }
+#Post p { margin-right: 10px; }
 
 #Post .info-box:hover { box-shadow: 0px 3px 6px rgb(32, 32, 32); }
 
@@ -361,6 +361,13 @@ a:hover { color: rgb(76, 76, 76); }
     .align-right {
         width: 40%;
         float: right;
+    }
+    #Post p {
+        font-size: 2.3vw;
+    }
+    #Post span {
+        margin: 10px;
+        font-size: 2.3vw;
     }
 
     .progress-back { margin: 0; }
