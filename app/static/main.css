@@ -317,10 +317,10 @@ a:hover { color: rgb(76, 76, 76); }
 @media only screen and (max-width: 1200px) {
     h1, h2, h3, h4, h5, h6 { font-size: 4vw; }
 
-    p { font-size: 2.5vw; }
+    p { font-size: 3vw; }
 
     span, li, a, label {
-        font-size: 2vw;
+        font-size: 2.5vw;
         margin: 0;
     }
 
@@ -336,15 +336,31 @@ a:hover { color: rgb(76, 76, 76); }
 
     .landing-img { object-fit: cover; }
 
-    #Resume .info-box {
-        min-height: 40vw;
-        margin-bottom: 25px;
+    .info-box {
+        min-height: 35vw;
+        margin-bottom: 2px;
         margin-top: 0;
+        width: auto;
     }
 
     .info-box { border: 0; }
 
-    #Blog { height: 90vw; margin-top: 125vw; }
+    .align-left {
+        margin: 10px;
+        width: 95%;
+    }
+    
+    .align-right {
+        margin: 10px;
+        width: 95%;
+        float: none;
+    }
+
+    #Blog { 
+        height: 90vw; 
+        margin-top: 20vw; 
+        height: 82vw;
+    }
 
     .b-box { margin: 1vw; }
 
@@ -353,15 +369,6 @@ a:hover { color: rgb(76, 76, 76); }
         height: 35vw;
     }
 
-    .align-left {
-        width: 40%;
-        float: left;
-    }
-    
-    .align-right {
-        width: 40%;
-        float: right;
-    }
     #Post p {
         font-size: 2.3vw;
     }
@@ -370,14 +377,27 @@ a:hover { color: rgb(76, 76, 76); }
         font-size: 2.3vw;
     }
 
-    .progress-back { margin: 0; }
-
-    #Contact { margin: 10px; }
+    .progress-back {
+        margin: 0;
+        width: 90%;
+        height: 10px;
+    }
     
-    #Contact .info-box { min-height: 105px; min-width: 135px; margin-bottom: 25vw; }
+    .progress-bar {
+        margin: 0px;
+        width: 100%;
+        height: 10px;
+    }
 
-    #Contact .align-left { margin-left: 0; }
-    #Contact .align-right { margin-right: 0; }
+    #Contact { margin: 0; padding: 0; }
+
+    #Contact .info-box {
+        min-height: 20vw;
+    }
+
+    #Contact a {
+        font-size: 14px;
+    }
 
     .contact-text a {
         font-size: 2.3vw;
@@ -385,12 +405,12 @@ a:hover { color: rgb(76, 76, 76); }
     }
     
     .contact-phone {
-        width: 4vw;
-        height: 5vw;
+        width: 5vw;
+        height: 6vw;
     }
     
     .contact-email {
-        width: 4.5vw;
+        width: 5vw;
         height: 4vw;
         margin: 2px;
     }
