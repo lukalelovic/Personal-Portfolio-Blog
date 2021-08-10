@@ -6,8 +6,7 @@ from app import app, db, limiter
 from app.forms import LoginForm, PostForm, EditForm
 from app.models import User, Post
 
-@app.route('/')
-@app.route('/index', methods=['GET', 'POST'])
+@app.route('/', methods=['GET'])
 def index():
     posts = Post.query.all()
     return render_template('index.html', posts=posts)
@@ -43,18 +42,18 @@ def login():
         return redirect(next_page)
     return render_template('login.html', form=form)
 
-@app.route('/logout')
+@app.route('/logout', methods=['POST'])
 def logout():
     logout_user()
     return redirect(url_for('index'))
 
-@app.route('/post/<int:id>', methods=['GET', 'POST'])
+@app.route('/post/<int:id>', methods=['GET'])
 def post(id):
     post = Post.query.filter_by(id=id).first_or_404()
     return render_template('_post.html', post=post)
 
 
-@app.route('/delete-post/<int:id>')
+@app.route('/delete-post/<int:id>', methods=['POST'])
 @login_required
 def delete_post(id):
     p = Post.query.filter_by(id=id).delete()
