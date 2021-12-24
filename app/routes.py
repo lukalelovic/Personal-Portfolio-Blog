@@ -2,6 +2,7 @@ from datetime import datetime
 from flask import render_template, flash, redirect, url_for, request
 from flask_login import login_user, logout_user, current_user, login_required
 from werkzeug.urls import url_parse
+from werkzeug.utils import secure_filename
 from app import app, db, limiter
 from app.forms import LoginForm, PostForm, EditForm
 from app.models import User, Post
@@ -18,6 +19,14 @@ def dashboard():
     form = PostForm()
     if form.validate_on_submit():
         post = Post(title=form.title.data, body=form.post.data, author=current_user)
+       
+        f = form.upload.data
+        filename = str(Post.query.count()) + '.jpg'
+        
+        # Save uploaded file (if exists)
+        if (f is not None):
+            f.save(app.config['UPLOAD_PATH'] + filename)
+
         db.session.add(post)
         db.session.commit()
         flash('Your post is now live!')
@@ -42,7 +51,7 @@ def login():
         return redirect(next_page)
     return render_template('login.html', form=form)
 
-@app.route('/logout', methods=['POST'])
+@app.route('/logout', methods=['GET', 'POST'])
 def logout():
     logout_user()
     return redirect(url_for('index'))
@@ -52,8 +61,7 @@ def post(id):
     post = Post.query.filter_by(id=id).first_or_404()
     return render_template('_post.html', post=post)
 
-
-@app.route('/delete-post/<int:id>', methods=['POST'])
+@app.route('/delete-post/<int:id>', methods=['GET', 'DELETE'])
 @login_required
 def delete_post(id):
     p = Post.query.filter_by(id=id).delete()
@@ -70,4 +78,7 @@ def edit_post(id):
         p.body = form.post.data 
         db.session.commit()
         return redirect(url_for('post', id=p.id))
+
+    form.title.data = p.title
+    form.post.data = p.body
     return render_template('_edit-post.html', form=form, post=p)

@@ -11,3 +11,5 @@ class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY')
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + join(basedir, 'app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+    UPLOAD_PATH = join(dirname(__file__), 'app/static/images/uploads/')

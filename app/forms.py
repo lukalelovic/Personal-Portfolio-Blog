@@ -1,4 +1,5 @@
 from flask_wtf import FlaskForm
+from flask_wtf.file import FileField, FileAllowed
 from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, Length
 from app.models import User
@@ -12,6 +13,7 @@ class LoginForm(FlaskForm):
 class PostForm(FlaskForm):
     title = StringField('Enter Post Title:', validators=[DataRequired()])
     post = TextAreaField('Enter Post Body:', validators=[DataRequired()])
+    upload = FileField('Upload Image:', validators=[FileAllowed(['jpg'], "Must be .jpg")])
     submit = SubmitField('Submit')
 
 class EditForm(FlaskForm):
