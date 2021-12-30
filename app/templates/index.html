@@ -48,8 +48,8 @@
 		<!--SECTION: ABOUT-->
 		<div id="Resume" class="container-fluid">
 			<div class="row">
-				<div class="col-12">
-					<br><h2 class="text-center">MY RESUME</h2><br>
+				<div class="col-md-12">
+					<br><h2 class="text-center">&lt MY RESUME /&gt</h2><br>
 				</div>
 
 				<div class="col-md-6">
@@ -170,12 +170,12 @@
 		<!--SECTION: BLOG-->
 		<div id="Blog" class="container-fluid text-center">
 			<div class="row">
-				<div class="col-12">
+				<div class="col-md-12">
 					<br>
-					<h2>MY BLOG</h2>
+					<h2>&lt BLOG /&gt</h2>
 				</div>
 
-				<div class="col-12">
+				<div class="col-md-12">
 					<div class="b-posts">
 						{% for post in posts %}
 						<a href="{{ url_for('post', id=post.id) }}" class="b-box">
@@ -192,17 +192,17 @@
 		<!--SECTION: CONTACT-->
 		<div id="Contact" class="container-fluid text-center">
 			<div class="row">
-				<div class="col-12">
-					<br><h2>Contact</h2><br>
+				<div class="col-md-12">
+					<br><h2>&lt CONTACT /&gt</h2><br>
 				</div>
-				<div class="col-6">
+				<div class="col-md-6">
 					<div class="info-box contact-text">
 						<img class="contact-phone" src="{{ url_for('static', filename='images/phone.png') }}">
 						<a href="tel:5014102365">+501 410 2365</a>
 						<p>Call Me</p>
 					</div>
 				</div>
-				<div class="col-6">
+				<div class="col-md-6">
 					<div class="info-box contact-text">
 						<img class="contact-email" src="{{ url_for('static', filename='images/mail.png') }}">
 						<a href="mailto:lukalelovic@gmail.com">lukalelovic@gmail.com</a>
