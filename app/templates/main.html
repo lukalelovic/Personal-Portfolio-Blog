@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	{% block head %}
+	<head>
+		{% block title %}
+			<title>{% if title %}{{ title }}{% else %}Luka Lelovic's Website{% endif %}</title>
+		{% endblock %}
+		
+		<meta name="viewport" content="width=device-with, initial-scale=1">
+		<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+		<link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet" type="text/css">
+		
+		{{ moment.include_jquery() }}
+		{{ moment.include_moment() }}
+	</head>
+	{% endblock %}
+	
+	{% block navbar %}
+	<!--SECTION: NAVBAR-->
+	<nav id="nBar" class="navbar navbar-expand-lg bg-light">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+												    aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		
+		<a href="#Home" class="navbar-brand">Luka Lelovic</a>
+
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="nav navbar-nav ml-auto">
+				<li><a href="#Resume">Resume</a></li>
+				<li><a href="#Blog">Blog</a></li>
+				<li><a href="#Contact">Contact</a></li>
+
+				<li>
+					<p class="navbar-text" style="margin-top: 10px; margin-bottom 0px;">
+					<a href="https://github.com/lukalelovic">
+						<img class="nav-img" src="{{ url_for('static', filename='images/github.png') }}">
+					</a>
+					<a href="https://linkedin.com/in/luka-lelovic/">
+						<img class="nav-img" src="{{ url_for('static', filename='images/linkedin.png') }}">
+					</a>
+					<a href="https://leetcode.com/lukalelovic/">
+						<img class="nav-img" src="{{ url_for('static', filename='images/leetcode.png') }}">
+					</a>
+					</p>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	{% endblock %}
+
+	{% block content %}
+	{% endblock %}
+</html>

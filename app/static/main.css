@@ -1,8 +1,5 @@
 /* Main Elements */
-html { overflow: auto; }
-
 body {
-    margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: white;
     overflow: hidden;
@@ -12,51 +9,14 @@ body {
 
 .bg-b { background-color: rgb(35, 35, 35); }
 
-a {
-    text-decoration: none;
-    color: black;
-    
-    -webkit-transition: color 0.5s;
-    -moz-transition: color 0.5s;
-    transition: color 0.5s;
-}
-
-a:hover { 
-    text-decoration: none;
-    color: rgb(76, 76, 76); 
-}
-
-li {
-    line-height: 1.5vh;
-    letter-spacing: 0.1vw;
-    list-style-type: none;
-}
-
-li a {
-    display: block;
-    padding: 20px;
-    text-align: center;
-    font-size: 16px;
-}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    position: fixed;
-}
-
 span {
     font-size: 16px;
-    word-spacing: 2px;
-    line-height: 30px;
 }
 
 button {
     background-color: rgb(105, 105, 105);
     color: white;
     font-size: 16px;
-    cursor: pointer;
 }
 
 input, button {
@@ -64,45 +24,19 @@ input, button {
     border-radius: 4px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     width: fit-content;
-    margin: 10px;
 }
 
 /* Navigation Bar */
-#navbar {
-    overflow: auto;
-    background-color: white;
-    height: 60px;
+.navbar {
     position: fixed;
     top: -75px;
-    width: 100%;
-    display: block;
     transition: top 0.3s;
     z-index: 1000;
 }
 
-#navbar li { float: left; }
-
-#navbar-left-align { margin-left: 30px; }
-
-#navbar-right-align { margin-left: 70%; }
-
 .nav-img {
     width: 50px;
     height: 50px;
-    margin: 5px;
-}
-
-.nav-btn {
-    background-color: white;
-    color: black;
-    border: 2px solid #555555;
-    margin-top: 10px;
-    visibility: hidden;
-    border-radius: 4px;
-    font-size: 26px;
-    float: right;
-    width: 40px;
-    height: 40px;
 }
 
 /* Landing Page */
@@ -237,10 +171,6 @@ input, button {
     height: fit-content;
 }
 
-@media only screen and (max-width: 1500px) { 
-    #navbar-right-align { margin-left: 65vw; }
-}
-
 /* Mobile Support */
 @media only screen and (max-width: 1200px) {
     
@@ -253,18 +183,9 @@ input, button {
         margin-bottom: 10px;
     }
 
-    #navbar { margin: 0; }
-
-    #navbar-left-align { margin: 0; }
-    
-    #navbar-right-align { margin-top: 10vw; margin-left: 0; display: inline-block; visibility: hidden; }
-
-    .nav-btn { visibility: visible; float: right; margin-right: 5px;}
-
     .nav-img {
         width: 10vw;
         height: 10vw;
-        margin-top: 2vh;
     }
 
     .landing-img { object-fit: cover; }
