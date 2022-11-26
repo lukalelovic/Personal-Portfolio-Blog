@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="relative flex items-center justify-center h-screen">
-    <div class="bg-white rounded-md">
-        <img class="w-90 border-4 border-primary rounded-sm" src="{{ url_for('static', filename='images/uploads/{}.jpg'.format(post.id)) }}">
+<div class="relative flex flex-row mb-12">
+</div>
+<div class="relative flex flex-col md:flex-row items-center justify-center h-screen bg-white p-5">
+	<img class="w-90 sm:w-1/2 border-4 border-primary rounded-sm" src="{{ url_for('static', filename='images/uploads/{}.jpg'.format(post.id)) }}">
 
-        <div class="flex flex-col bg-white rounded-md drop-shadow-md text-black">
-            <h3 class="text-2xl">{{ post.title }}</h3>
-            <span class="font-bold">{{ moment(post.timestamp).format('LL') }}</span>
-            <p>{{ post.body|safe }}</p>
-        </div>
-    </div>
+	<div class="flex flex-col text-black m-2">
+		<h3 class="text-2xl">{{ post.title }}</h3>
+		<span class="font-bold">{{ moment(post.timestamp).format('LL') }}</span>
+		<p>{{ post.body|safe }}</p>
+	</div>
 </div>
 {% endblock %}

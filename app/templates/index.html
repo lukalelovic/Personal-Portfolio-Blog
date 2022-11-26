@@ -2,12 +2,12 @@
 
 {% block content %}
 <!-- Landing Screen -->
-<header class="relative flex items-center justify-center h-screen overflow-hidden">
+<header class="relative flex items-center justify-center h-screen overflow-hidden bg-primary">
     <div class="relative z-30 p-5 text-5xl text-white text-center">
         <h1 class="text-5xl">Hi I'm Luka</h1>
         <h3 class="text-3xl">Welcome to my website!</h3>
     </div>
-    <img src="{{ url_for('static', filename='river.jpg') }}" class="absolute object-fit z-10 w-auto">
+    <img src="{{ url_for('static', filename='river.jpg') }}" class="absolute object-none sm:object-scale-down min-h-full z-10 w-auto">
     <!-- <video autoplay loop muted class="absolute z-10 w-auto min-w-full min-h-full max-w-none">
         <source src="{{ url_for('static', filename='arkansas.mov') }}" type="video/mp4" />
         Your browser does not support the video tag.
@@ -96,7 +96,7 @@
     <h4 class="text-4xl text-center text-white">Contact</h4>
     <div class="flex flex-col md:flex-row w-full">
         <!-- Phone -->
-        <div class="flex flex-col w-full md:w-1/2 md:m-5 bg-white rounded-md p-5">
+        <div class="flex flex-col w-full md:w-1/2 md:m-5 bg-white rounded-md mb-4 p-5">
             <a href="tel:5014102365" class="underline text-lg">+501 410 2365</a>
             <p>Call Me</p>
         </div>
