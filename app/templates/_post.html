@@ -1,33 +1,15 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>{{ post.title }}</title>
-		<meta name="viewport" content="width=device-with, initial-scale=1">
+{% extends "base.html" %}
 
-		<!--Bootstrap 4-->
-		<link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
-		<link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet" type="text/css">
-	</head>
-	<body class="bg-b">
-		{{ moment.include_jquery() }}
-		{{ moment.include_moment() }}
+{% block content %}
+<div class="relative flex items-center justify-center h-screen">
+    <div class="bg-white rounded-md">
+        <img class="w-90 border-4 border-primary rounded-sm" src="{{ url_for('static', filename='images/uploads/{}.jpg'.format(post.id)) }}">
 
-		<!--SECTION: BLOG POST-->
-		<div id="Post" class="container-fluid">
-			<div class="row info-box"> 
-				<div class="col-md-6">
-					<img class="img-fluid" style="max-width: 90%;" src="{{ url_for('static', filename='images/uploads/{}.jpg'.format(post.id)) }}">
-				</div>
-				<div class="col-md-6">
-					<br>
-					<h3>{{ post.title }}</h3>
-					<span style="display: block;">{{ moment(post.timestamp).format('LL') }}</span>
-					<p style="display: inline;">{{ post.body|safe }}</p>
-				</div> 
-			</div>
-		</div>
-		<div class="container-fluid">
-			<a href="{{ url_for('index') }}">< Back</a>
-		</div>
-	</body>
-</html>
+        <div class="flex flex-col bg-white rounded-md drop-shadow-md text-black">
+            <h3 class="text-2xl">{{ post.title }}</h3>
+            <span class="font-bold">{{ moment(post.timestamp).format('LL') }}</span>
+            <p>{{ post.body|safe }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

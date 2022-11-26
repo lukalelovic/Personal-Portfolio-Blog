@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Luka Lelovic's Website</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+              theme: {
+                extend: {
+                    colors: {
+                        'primary': '#47B5FF',
+                    },
+                    fontFamily: {
+                        'work-sans': ['"IBM Plex Sans"'],
+                    },
+                    fontSize: {
+                        '3xl': '1.953rem',
+                        '4xl': '2.441rem',
+                        '5xl': '3.052rem',
+                    }
+                }
+              }
+            }
+          </script>
+          <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+    </head>
+    <body class="h-screen w-full font-work-sans tracking-wide">
+        {{ moment.include_jquery() }}
+        {{ moment.include_moment() }}
+
+        <!-- Navbar -->
+        <nav class="bg-white p-2 drop-shadow-md py-2.5 fixed w-full z-40">
+            <div class="container flex flex-wrap justify-between items-center mx-auto">
+                <a href="/" class="flex items-center no-underline">
+                    <h1 class="text-black no-underline self-center text-xl font-semibold whitespace-nowrap">
+                        Luka Lelovic
+                    </h1>
+                </a>
+                <!-- Mobile menu button -->
+				<div class="visible sm:hidden items-center">
+					<button class="outline-none mobile-menu-button">
+						<svg class=" w-6 h-6 text-gray-500 hover:text-primary"
+							x-show="!showMenu"
+							fill="none"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							viewBox="0 0 24 24"
+							stroke="currentColor">
+							    <path d="M4 6h16M4 12h16M4 18h16"></path>
+						</svg>
+					</button>
+				</div>
+
+                <div class="hidden sm:block w-auto" id="navbar-default">
+                    <ul class="flex flex-row space-x-4 justify-center items-center">
+                        <li><a class="hover:text-blue-400" href="#about">About</a></li>
+                        <li><a class="hover:text-blue-400" href="#blog">Blog</a></li>
+                        <li><a class="hover:text-blue-400" href="#contact">Contact</a></li>
+                        <li>
+                            <a href="https://github.com/lukalelovic/">
+                                <img class="w-12" src="{{ url_for('static', filename='images/github.png') }}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com/in/luka-lelovic/">
+                                <img class="w-12" src="{{ url_for('static', filename='images/linkedin.png') }}">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        {% block content %}{% endblock %} 
+        <script>
+            const btn = document.querySelector("button.mobile-menu-button");
+            const menu = document.getElementById("navbar-default");
+
+            btn.addEventListener("click", () => {
+                menu.classList.toggle("hidden");
+            });
+        </script>
+    </body>
+</html>
