@@ -7,25 +7,29 @@
         <h1 class="text-5xl">Hi I'm Luka</h1>
         <h3 class="text-3xl">Welcome to my website!</h3>
     </div>
+<<<<<<< HEAD
     <img src="{{ url_for('static', filename='river.jpg') }}" class="absolute object-none sm:object-scale-down min-h-full z-10 w-auto">
+=======
+    <img src="{{ url_for('static', filename='river.jpg') }}" class="absolute object-cover z-10 min-h-full w-auto">
+>>>>>>> b4bbd7fe74b42dfd184f4bb9dbf5c99655bfce95
     <!-- <video autoplay loop muted class="absolute z-10 w-auto min-w-full min-h-full max-w-none">
         <source src="{{ url_for('static', filename='arkansas.mov') }}" type="video/mp4" />
         Your browser does not support the video tag.
     </video> -->
 </header>
 
-<section id="about" class="relative flex flex-col items-center justify-center bg-primary pb-6">
+<section id="about" class="relative flex flex-col items-center justify-center bg-primary p-2 pb-6">
     <!-- About -->
-    <div class="w-full p-3 md:w-1/2 flex flex-col bg-white rounded rounded-lg text-black text-center p-3 drop-shadow-md mt-12">
-        <h4 class="text-2xl">About Me</h4>
-        <p>Computer science major from Little Rock studying at Baylor University with an anticipated graduation of
+    <div class="w-full sm:w-1/2 p-3 flex flex-col bg-white rounded rounded-lg text-black text-center p-3 drop-shadow-md mt-12">
+        <h4 class="text-3xl">About Me</h4>
+        <p class="text-lg">Computer science major from Little Rock studying at Baylor University with an anticipated graduation of
             May 2024. Passionate for building fullstack software and web applications. Built this website from scratch 
             for the purpose of displaying both my skills, projects, and more!</p>
     </div>
 
-    <div class="flex flex-col md:flex-row w-full">
+    <div class="flex flex-col sm:flex-row w-full p-2">
         <!-- Skills -->
-        <div class="flex flex-col w-full md:w-1/2 md:m-5">
+        <div class="flex flex-col w-full md:w-1/2 mb-6 md:m-5">
             <h1 class="text-lg text-white">Skills</h1>
     
             <div class="bg-white rounded rounded-lg p-3 drop-shadow-md">
@@ -76,9 +80,9 @@
 
 <!-- Blog -->
 <section id="blog" class="relative flex flex-col bg-white">
-    <h4 class="text-4xl text-center text-black">Blog</h4>
+    <h4 class="text-4xl text-center text-black mt-2">Blog</h4>
 
-    <div class="flex overflow-x-scroll space-x-8">
+    <div class="flex overflow-x-scroll space-x-8 p-2">
         {% for post in posts %}
             <a href="{{ url_for('post', id=post.id) }}" class="mb-5 bg-primary text-white drop-shadow-md flex-shrink-0">
                 <img src="{{ url_for('static', filename='images/uploads/{}.jpg'.format(post.id)) }}" 
@@ -93,15 +97,19 @@
 
 <!-- Contact -->
 <section id="contact" class="relative flex flex-col items-center text-center justify-center bg-primary pb-6">
-    <h4 class="text-4xl text-center text-white">Contact</h4>
-    <div class="flex flex-col md:flex-row w-full">
+    <h4 class="text-4xl text-center text-white mt-2">Contact</h4>
+    <div class="flex flex-col md:flex-row w-full p-2">
         <!-- Phone -->
+<<<<<<< HEAD
         <div class="flex flex-col w-full md:w-1/2 md:m-5 bg-white rounded-md mb-4 p-5">
+=======
+        <div class="flex flex-col w-full md:w-1/2 md:m-5 bg-white rounded-md p-5 mb-5 drop-shadow-md">
+>>>>>>> b4bbd7fe74b42dfd184f4bb9dbf5c99655bfce95
             <a href="tel:5014102365" class="underline text-lg">+501 410 2365</a>
             <p>Call Me</p>
         </div>
         <!-- Email -->
-        <div class="flex flex-col w-full md:w-1/2 md:m-5 bg-white rounded-md p-5">
+        <div class="flex flex-col w-full md:w-1/2 md:m-5 bg-white rounded-md p-5 drop-shadow-md">
             <a href="mailto:lukalelovic@gmail.com" class="underline text-lg">lukalelovic@gmail.com</a>
             <p>Email Me</p>
         </div>
